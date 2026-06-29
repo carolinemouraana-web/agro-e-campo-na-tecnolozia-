@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech - O Futuro do Campo Conectado</title>
+    
+    <!-- Link para o CSS Externo (O arquivo que criamos no primeiro passo) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Scripts de Ícones Modernos (Lucide Icons) -->
+    <script src="https://unpkg.com"></script>
+</head>
+<body>
+
+    <!-- Caixa Dinâmica de Alerta (Gerenciada pelo JavaScript) -->
+    <div id="agro-alert"></div>
+
+    <!-- Barra de Navegação Superior -->
+    <nav class="navbar">
+        <div class="logo">Agro<span>Tech</span></div>
+        
+        <ul class="nav-links">
+            <li><a href="#monitoramento">Monitoramento</a></li>
+            <li><a href="#tecnologias">Tecnologias</a></li>
+            <li><a href="#producao">Produção</a></li>
+            <li><a href="#" class="btn-primary" style="padding: 0.5rem 1.2rem; box-shadow: none;">Acessar Painel</a></li>
+        </ul>
+
+        <!-- Botão Hambúrguer para Telas de Celular -->
+        <div class="menu-burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Seção Principal de Apresentação (Hero Section) -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="data-badge"><i data-lucide="cpu"></i> Agricultura 4.0</span>
+            <h1>Inteligência Artificial Cultivando o Futuro</h1>
+            <p>Conecte sua lavoura a sensores IoT de alta precisão, monitore o solo em tempo real e aumente sua produtividade por hectare de forma sustentável.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#monitoramento" class="btn-primary">Ver Sensores ao Vivo</a>
+                <a href="#tecnologias" class="btn-primary" style="background-color: var(--tech-blue); box-shadow: 0 4px 15px rgba(2, 128, 144, 0.3);">Nossas Soluções</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Monitoramento por Telemetria (Cards com Atualização JS) -->
+    <section id="monitoramento" style="padding: 3rem 5% 1rem 5%;">
+        <h2 style="color: var(--terra-escuro); margin-bottom: 0.5rem;">Telemetria IOT em Tempo Real</h2>
+        <p style="color: #666;">Dados simulados direto dos sensores instalados nos talhões da fazenda.</p>
+        
+        <div class="features-grid" style="padding: 2rem 0;">
+            <!-- Card Umidade do Solo -->
+            <div class="card-tech">
+                <span class="data-badge"><i data-lucide="droplet"></i> Solo</span>
+                <h3 style="margin-top: 1rem;">Umidade Crítica</h3>
+                <p id="humidity-value" style="font-size: 2.5rem; font-weight: 800; color: var(--tech-blue); margin: 1rem 0;">Carregando...</p>
+                <p style="font-size: 0.85rem; color: #888;">Última leitura há poucos segundos</p>
+            </div>
+
+            <!-- Card Temperatura do Ar -->
+            <div class="card-tech" style="border-top: 4px solid #e76f51;">
+                <span class="data-badge" style="background-color: rgba(231, 111, 81, 0.1); color: #e76f51;"><i data-lucide="thermometer"></i> Clima</span>
+                <h3 style="margin-top: 1rem;">Temperatura do Ar</h3>
+                <p id="temperature-value" style="font-size: 2.5rem; font-weight: 800; color: #e76f51; margin: 1rem 0;">Carregando...</p>
+                <p style="font-size: 0.85rem; color: #888;">Sensores térmicos ativos</p>
+            </div>
+
+            <!-- Card Status da Conexão -->
+            <div class="card-tech" style="border-top: 4px solid var(--verde-agro);">
+                <span class="data-badge" style="background-color: rgba(45, 106, 79, 0.1); color: var(--verde-agro);"><i data-lucide="wifi"></i> Rede</span>
+                <h3 style="margin-top: 1rem;">Status do Sistema</h3>
+                <p style="font-size: 1.8rem; font-weight: 700; color: var(--verde-agro); margin: 1.5rem 0;">100% Online</p>
+                <p style="font-size: 0.85rem; color: #888;">Antena Starlink Conectada</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do Gráfico Dinâmico de Produtividade -->
+    <section id="producao" style="padding: 2rem 5% 4rem 5%;">
+        <div style="background-color: var(--branco-card); padding: 2.5rem; border-radius: var(--borda-raio); box-shadow: var(--sombra-tech);">
+            <h3 style="color: var(--terra-escuro); margin-bottom: 0.5rem;"><i data-lucide="bar-chart-3" style="vertical-align: middle;"></i> Estimativa de Colheita por Região</h3>
+            <p style="color: #666; margin-bottom: 2rem;">Média prevista de sacas de grãos por hectare (sc/ha) nos principais talhões.</p>
+            
+            <!-- Gráfico Animado via CSS/JS -->
+            <div class="agro-chart-container">
+                <div class="chart-column">
+                    <div class="chart-bar-fill" data-production="82"></div>
+                    <span style="font-weight: 600; margin-top: 0.5rem;">Talhão Norte</span>
+                </div>
+                <div class="chart-column">
+                    <div class="chart-bar-fill" data-production="55" style="background-color: var(--tech-blue);"></div>
+                    <span style="font-weight: 600; margin-top: 0.5rem;">Talhão Sul</span>
+                </div>
+                <div class="chart-column">
+                    <div class="chart-bar-fill" data-production="94"></div>
+                    <span style="font-weight: 600; margin-top: 0.5rem;">Talhão Leste</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Institucional -->
+    <footer class="footer-agro">
+        <p>&copy; 2026 AgroTech Soluções Agrícolas S.A. Conectando o campo com o amanhã.</p>
+        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">Desenvolvido com foco em alta produtividade e tecnologia sustentável.</p>
+    </footer>
+
+    <!-- Ativação Automática dos Ícones -->
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <!-- Link para o Script JS (O arquivo interativo do passo anterior) -->
+    <script src="script.js"></script>
+</body>
+</html>
